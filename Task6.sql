@@ -9,6 +9,7 @@ SELECT Pet_Type.Name, AVG(convert(decimal, Pet.AGE)) FROM Pet, Pet_Type WHERE Pe
 GROUP BY Pet_Type.Name HAVING  AVG(convert(decimal, Pet.AGE)) < 6;
 
 SELECT Last_Name, COUNT(Is_Done) FROM Person JOIN Employee on Person.Person_ID = Employee.Person_ID JOIN Order1 on Employee.Employee_ID = Order1.Employee_ID
+WHERE Is_Done = 1
 GROUP BY Last_Name HAVING COUNT(Is_Done) > 5;
 
 SELECT Order1.Mark, Service.Name, Order1.Time_Order FROM Order1, Service 
